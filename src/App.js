@@ -24,6 +24,10 @@ class App extends Component {
    });
   }
 
+  onLogOutButtonPress() {
+      return <LoginForm />;
+  }
+
   renderContent() {
     switch (this.state.loggedIn) {
       /*initially the button was spread across the page
@@ -32,7 +36,9 @@ class App extends Component {
       case true:
       return (<Card>
         <CardSection>
-          <Button>
+          <Button
+          whenPressed={() => firebase.auth().signOut()}
+          >
            Log Out
           </Button>
         </CardSection>
@@ -42,12 +48,12 @@ class App extends Component {
         return <LoginForm />;
 
       default:
-        return <Spinner size="large" />
+        return <Spinner size="large" />;
 
     }
   }
-    //if user is not loggedin show login form
 
+//if user is not loggedin show login form
   render() {
     return (
       <View style={{ backgroundColor: 'white', flex: 1 }}>

@@ -6,7 +6,7 @@ import LoginForm from './components/LoginForm';
 
 class App extends Component {
   state = { loggedIn: null };//null cuz we dont know if we are signed in or not
-    componentWillMount() {
+        componentWillMount() {
     firebase.initializeApp({
         apiKey: 'AIzaSyBZ6Jp9o7kpgrPFCYY89vjq_96ZqzWRJac',
         authDomain: 'authentication-d3382.firebaseapp.com',
